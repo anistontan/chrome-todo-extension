@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coquette To-Do List</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Quicksand:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Force the popup to have a specific size */
+        body {
+            width: 400px;
+            height: 525px;
+            overflow: auto;
+        }
+    </style>
+</head>
+<body class="bg-pink-50 p-4">
+    <div class="flex flex-col">
+        <!-- Header -->
+        <header class="header-container text-center mb-4 relative">
+            <div class="scrapbook-tape"></div>
+            <div class="cute-sticker">🎀</div>
+            <h1 class="text-3xl font-dancing">tasks for the day</h1>
+            <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-pink-200 rounded"></div>
+        </header>
+
+        <!-- Tabs -->
+        <div class="flex mb-4 border-b border-pink-200 relative">
+            <button class="tab-btn active px-4 py-2" data-tab="todo">to-do List</button>
+            <button class="tab-btn px-4 py-2" data-tab="calendar">calendar</button>
+            <div class="absolute right-0 bottom-1 text-pink-300 text-xs">✨</div>
+        </div>
+
+        <!-- To-Do List Section -->
+        <section id="todo-section" class="tab-content active">
+            <div class="mb-4 relative">
+                <div class="flex gap-2">
+                    <input type="text" id="new-task" 
+                           class="flex-1 px-3 py-2 rounded-lg"
+                           placeholder="Add a new task...">
+                    <button id="add-task" 
+                            class="btn-primary px-4 py-2 rounded-lg">
+                        Add
+                    </button>
+                </div>
+                <div class="absolute -top-3 right-2 text-pink-300 text-xs">✎</div>
+            </div>
+            <div id="task-list" class="space-y-2 max-h-[290px] overflow-y-auto">
+                <!-- Tasks will be added here dynamically -->
+            </div>
+            <button id="clear-all" 
+                    class="btn-secondary mt-4 px-4 py-2">
+                Clear All
+            </button>
+        </section>
+
+        <!-- Calendar Section -->
+        <section id="calendar-section" class="tab-content hidden">
+            <div class="calendar-container mb-4">
+                <div class="calendar-header">
+                    <button id="prev-month" class="text-pink-400 hover:text-pink-600">←</button>
+                    <h2 id="current-month" class="text-xl font-dancing text-pink-400">month year</h2>
+                    <button id="next-month" class="text-pink-400 hover:text-pink-600">→</button>
+                </div>
+                
+                <!-- Calendar Grid -->
+                <div class="grid grid-cols-7 gap-1 mb-2">
+                    <div class="text-center text-pink-400 text-xs">sun</div>
+                    <div class="text-center text-pink-400 text-xs">mon</div>
+                    <div class="text-center text-pink-400 text-xs">tue</div>
+                    <div class="text-center text-pink-400 text-xs">wed</div>
+                    <div class="text-center text-pink-400 text-xs">thu</div>
+                    <div class="text-center text-pink-400 text-xs">fri</div>
+                    <div class="text-center text-pink-400 text-xs">sat</div>
+                </div>
+                <div id="calendar-grid" class="grid grid-cols-7 gap-1 mb-1">
+                    <!-- Calendar days will be added here dynamically -->
+                </div>
+                <div class="text-right text-xs text-pink-300 mr-1 mt-1">✨ click on a date to add events ✨</div>
+            </div>
+            
+            <!-- Event details section -->
+            <div id="event-details" class="mt-4 hidden">
+                <div class="flex items-center justify-between mb-2">
+                    <h3 id="selected-date" class="text-lg font-dancing"></h3>
+                    <button id="close-event" class="text-pink-400 hover:text-pink-600">×</button>
+                </div>
+                
+                <!-- Events List -->
+                <div id="events-list" class="mb-3 max-h-[120px] overflow-y-auto">
+                    <!-- Existing events will be listed here -->
+                </div>
+                
+                <!-- Add/Edit Event Form -->
+                <div class="bg-white rounded-lg p-3 border border-pink-200">
+                    <div class="mb-2">
+                        <input type="text" id="event-title" 
+                               class="w-full px-3 py-2 mb-2"
+                               placeholder="Event title...">
+                        <textarea id="event-description" 
+                                  class="w-full px-3 py-2"
+                                  placeholder="Event details..." rows="2"></textarea>
+                    </div>
+                    <div class="flex justify-between gap-2">
+                        <button id="new-event" 
+                                class="btn-secondary px-3 py-1">
+                            New Event
+                        </button>
+                        <div class="flex gap-2">
+                            <button id="delete-event" 
+                                    class="btn-secondary px-3 py-1">
+                                Delete
+                            </button>
+                            <button id="save-event" 
+                                    class="btn-primary px-3 py-1">
+                                Save
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script src="popup.js"></script>
+</body>
+</html> 
