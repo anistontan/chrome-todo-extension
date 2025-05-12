@@ -1,15 +1,8 @@
 # Coquette To-Do List Chrome Extension
 
-A cute and aesthetic Chrome extension featuring a to-do list and calendar with coquette styling. Perfect for organizing your tasks and events in a beautiful way!
+I couldnt find a to-list that accurately fits what i need so i made my own :) 
 
-## Features
-
-- ✨ Coquette aesthetic with pastel colors and soft fonts
-- 📝 To-do list with add, edit, and delete functionality
-- ✅ Tasks remain visible when completed with a cute tick icon
-- 📅 Monthly calendar view with note-taking capability
-- 💾 Local storage for your tasks and calendar notes
-- 🎨 Beautiful animations and hover effects
+it is nothing much just a simple extension with a task page and a calendar page, easy to keep track of what you need to do and take note of!
 
 ## Installation
 
@@ -26,23 +19,13 @@ A cute and aesthetic Chrome extension featuring a to-do list and calendar with c
 - Add new tasks using the input field
 - Click the circle icon to mark tasks as complete
 - Click the × icon to delete tasks
-- Use the "Clear All" button to reset your list
 
 ### Calendar
 - Switch to the calendar tab
 - Navigate between months using the arrow buttons
 - Click on any date to add or edit notes
 - Hover over dates with notes to view them
-- Today's date is highlighted with a special border
 
-## Styling
-
-The extension features a coquette aesthetic with:
-- Soft pastel colors
-- Handwritten-style fonts
-- Gentle animations
-- Cute icons and hover effects
-- Notebook-style background
 
 ## Development
 
@@ -51,7 +34,3 @@ Built with:
 - CSS3 (with Tailwind CSS)
 - JavaScript
 - Chrome Extension APIs
-
-## License
-
-MIT License - feel free to use and modify for personal use! 
